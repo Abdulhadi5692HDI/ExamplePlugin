@@ -12,16 +12,24 @@ use pocketmine\Server;
 use pocketmine\utils\TextFormat;
 
 class MainClass extends PluginBase implements Listener{
-
+// This shows the onload function
 	public function onLoad(){
 		$this->getLogger()->info(TextFormat::WHITE . "I've been loaded!");
-	}
+                // How about a warning
+                $this->getLogger()->warning("Warning Example");
+         
+       // Critical, errors, notices
+	
+       $this->getLogger()->critical("A example of this");
+        $this->getLogger()->error("Fake error");
+          $this->getLogger()->notice("The api is the best!");
 
 	public function onEnable(){
-		$this->getServer()->getPluginManager()->registerEvents($this, $this);
+	// Lets see the basic functions onEnable and onDisable
+	$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		$this->getServer()->getScheduler()->scheduleRepeatingTask(new BroadcastPluginTask($this), 120);
 		$this->getLogger()->info(TextFormat::DARK_GREEN . "I've been enabled!");
-    }
+    }           $this->getLogger()->notice("PHP started UwU");
 
 	public function onDisable(){
 		$this->getLogger()->info(TextFormat::DARK_RED . "I've been disabled!");
